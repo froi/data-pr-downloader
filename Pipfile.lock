@@ -1,0 +1,48 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "7bcbb1e9fb42cfb70c9db6c2c986bdfec58f523cf05bb6e7a234db98e9070035"
+        },
+        "requires": {},
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "certifi": {
+            "version": "==2017.4.17"
+        },
+        "chardet": {
+            "version": "==3.0.4"
+        },
+        "idna": {
+            "version": "==2.5"
+        },
+        "python-slugify": {
+            "version": "==1.2.4"
+        },
+        "requests": {
+            "version": "==2.18.2"
+        },
+        "unidecode": {
+            "version": "==0.04.21"
+        },
+        "urllib3": {
+            "version": "==1.22"
+        }
+    },
+    "develop": {
+        "py": {
+            "version": "==1.4.34"
+        },
+        "pytest": {
+            "version": "==3.1.3"
+        },
+        "setuptools": {
+            "version": "==36.2.3"
+        }
+    }
+}
