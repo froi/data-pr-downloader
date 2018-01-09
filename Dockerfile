@@ -1,9 +1,8 @@
 FROM python:alpine3.6
 
-RUN pip install requests python-slugify pytest
-RUN mkdir -p /Code/data_files
-COPY data_pr_downloader.py /Code
+COPY data_pr_downloader.py Pipfile Pipfile.lock /Code/
 WORKDIR /Code/
+RUN pip install pipenv &&\
+    pipenv install --system
 
 CMD ["python","data_pr_downloader.py"] 
-
