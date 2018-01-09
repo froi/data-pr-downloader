@@ -35,7 +35,11 @@ def get_datasets(data_pr_catalog, amount_to_download=None):
 
         for distribution in dataset['distribution']:
             file_extension = guess_extension(distribution['mediaType'])
-            response = requests.get(distribution['downloadURL'], stream=True)
+            try:
+                response = requests.get(distribution['downloadURL'], stream=True)
+            except Exception as e:
+                logger.error('Error requesting data: %s', e)
+                continue
 
             logger.debug(f"Downloading distribution: {distribution['mediaType']}")
 
