@@ -19,3 +19,8 @@ All created files are saved to the `data_files` directory using the following st
 3. Install dependencies `pipenv install`
 4. Activate the virtual environment `pipenv shell`
 5. Execute `python data_pr_downloader.py`
+
+# Running with docker
+
+1. Run ```./build.sh``` to build docker image
+2. Run ```./run.sh``` to fetch data.  Files will be downloaded in the ```data_files``` directory.
