@@ -55,7 +55,7 @@ def main():
     try:
         get_datasets(DATA_PR_CATALOG_PATH)
     except Exception as e:
-        logger.error('Error at get_new_data_pr_catalog: %s', e)
+        logger.error('Error at get_datasets: %s', e)
 
 if __name__ == '__main__':
     logger.setLevel(logging.DEBUG)
