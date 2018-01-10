@@ -35,7 +35,11 @@ def get_datasets(data_pr_catalog, amount_to_download=None):
 
         for distribution in dataset['distribution']:
             file_extension = guess_extension(distribution['mediaType'])
-            response = requests.get(distribution['downloadURL'], stream=True)
+            try:
+                response = requests.get(distribution['downloadURL'], stream=True)
+            except Exception as e:
+                logger.error('Error requesting data: %s', e)
+                continue
 
             logger.debug(f"Downloading distribution: {distribution['mediaType']}")
 
@@ -55,7 +59,7 @@ def main():
     try:
         get_datasets(DATA_PR_CATALOG_PATH)
     except Exception as e:
-        logger.error('Error at get_new_data_pr_catalog: %s', e)
+        logger.error('Error at get_datasets: %s', e)
 
 if __name__ == '__main__':
     logger.setLevel(logging.DEBUG)
